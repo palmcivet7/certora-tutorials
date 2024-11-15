@@ -1,0 +1,42 @@
+[
+  {
+    "description": "RequireMutation",
+    "diff": "--- original\n+++ mutant\n@@ -10,7 +10,8 @@\n   uint256 public totalVotes;\n \n   function vote(bool isInFavor) public {\n-    require(!_hasVoted[msg.sender]);\n+    /// RequireMutation(`!_hasVoted[msg.sender]` |==> `true`) of: `require(!_hasVoted[msg.sender]);`\n+    require(true);\n     _hasVoted[msg.sender] = true;\n \n     totalVotes += 1;\n",
+    "id": "1",
+    "name": "mutants/1/Voting.sol",
+    "original": "Voting.sol",
+    "sourceroot": "/Users/anon/repos/security/practice/certora/tutorials-code/lesson4_invariants/simple_voting"
+  },
+  {
+    "description": "DeleteExpressionMutation",
+    "diff": "--- original\n+++ mutant\n@@ -13,7 +13,8 @@\n     require(!_hasVoted[msg.sender]);\n     _hasVoted[msg.sender] = true;\n \n-    totalVotes += 1;\n+    /// DeleteExpressionMutation(`totalVotes += 1` |==> `assert(true)`) of: `totalVotes += 1;`\n+    assert(true);\n     if (isInFavor) {\n       votesInFavor += 1;\n     } else {\n",
+    "id": "2",
+    "name": "mutants/2/Voting.sol",
+    "original": "Voting.sol",
+    "sourceroot": "/Users/anon/repos/security/practice/certora/tutorials-code/lesson4_invariants/simple_voting"
+  },
+  {
+    "description": "AssignmentMutation",
+    "diff": "--- original\n+++ mutant\n@@ -13,7 +13,8 @@\n     require(!_hasVoted[msg.sender]);\n     _hasVoted[msg.sender] = true;\n \n-    totalVotes += 1;\n+    /// AssignmentMutation(`1` |==> `0`) of: `totalVotes += 1;`\n+    totalVotes += 0;\n     if (isInFavor) {\n       votesInFavor += 1;\n     } else {\n",
+    "id": "3",
+    "name": "mutants/3/Voting.sol",
+    "original": "Voting.sol",
+    "sourceroot": "/Users/anon/repos/security/practice/certora/tutorials-code/lesson4_invariants/simple_voting"
+  },
+  {
+    "description": "DeleteExpressionMutation",
+    "diff": "--- original\n+++ mutant\n@@ -17,7 +17,8 @@\n     if (isInFavor) {\n       votesInFavor += 1;\n     } else {\n-      votesAgainst += 1;\n+      /// DeleteExpressionMutation(`votesAgainst += 1` |==> `assert(true)`) of: `votesAgainst += 1;`\n+      assert(true);\n     }\n   }\n \n",
+    "id": "4",
+    "name": "mutants/4/Voting.sol",
+    "original": "Voting.sol",
+    "sourceroot": "/Users/anon/repos/security/practice/certora/tutorials-code/lesson4_invariants/simple_voting"
+  },
+  {
+    "description": "AssignmentMutation",
+    "diff": "--- original\n+++ mutant\n@@ -17,7 +17,8 @@\n     if (isInFavor) {\n       votesInFavor += 1;\n     } else {\n-      votesAgainst += 1;\n+      /// AssignmentMutation(`1` |==> `0`) of: `votesAgainst += 1;`\n+      votesAgainst += 0;\n     }\n   }\n \n",
+    "id": "5",
+    "name": "mutants/5/Voting.sol",
+    "original": "Voting.sol",
+    "sourceroot": "/Users/anon/repos/security/practice/certora/tutorials-code/lesson4_invariants/simple_voting"
+  }
+]

@@ -1,0 +1,5 @@
+1,RequireMutation,Voting.sol,13:13,!_hasVoted[msg.sender],true
+2,DeleteExpressionMutation,Voting.sol,16:5,totalVotes += 1,assert(true)
+3,AssignmentMutation,Voting.sol,16:19,1,0
+4,DeleteExpressionMutation,Voting.sol,20:7,votesAgainst += 1,assert(true)
+5,AssignmentMutation,Voting.sol,20:23,1,0
